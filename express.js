@@ -16,7 +16,7 @@ app.get("/contact",(req,res)=>{
 app.listen(3000);  */
 
 
-const express = require("express");
+/* const express = require("express");
 
 const app = express();
 
@@ -37,4 +37,31 @@ app.get("/about", (req, res) => {
     // res.send("This is a about us page")
 });
 
-app.listen(20000);
+app.listen(20000); */
+
+
+
+const express = require("express");
+const path = require("path");
+
+const app = express();
+const publicPath = path.join(__dirname,"public");
+// console.log(publicPath);
+// app.use(express.static(publicPath));  // Extension Allow
+// console.log(__dirname);
+
+
+// Without Extension
+
+app.get("/home",(req,res)=>{
+    res.sendFile(`${publicPath}/home.html`)
+});
+
+app.get("/about",(req,res)=>{
+    res.sendFile(`${publicPath}/about.html`)
+})
+
+app.get("*",(req,res)=>{
+    res.sendFile(`${publicPath}/404.html`)
+})
+app.listen(3000);   
