@@ -41,11 +41,11 @@ app.listen(20000); */
 
 
 
-const express = require("express");
+const express = require ("express");
 const path = require("path");
 
 const app = express();
-const publicPath = path.join(__dirname,"public");
+const publicPath = path.join(__dirname, "public");
 // console.log(publicPath);
 // app.use(express.static(publicPath));  // Extension Allow
 // console.log(__dirname);
@@ -53,15 +53,15 @@ const publicPath = path.join(__dirname,"public");
 
 // Without Extension
 
-app.get("/home",(req,res)=>{
+app.get("/home", (req, res) => {
     res.sendFile(`${publicPath}/home.html`)
 });
 
-app.get("/about",(req,res)=>{
+app.get("/about", (req, res) => {
     res.sendFile(`${publicPath}/about.html`)
 })
 
-app.get("*",(req,res)=>{
+app.get("*", (req, res) => {
     res.sendFile(`${publicPath}/404.html`)
 })
 app.listen(3000);   
