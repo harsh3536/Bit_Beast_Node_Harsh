@@ -1,6 +1,7 @@
 const dbConnect = require("./mongodb");
 
 //      Create Data  
+
 /* 
 const main =async () => {
     let data = await dbConnect();
@@ -22,18 +23,56 @@ main(); */
 //      Insert Data
 
 
-const insertData = async ()=>{
+/* const insertData = async () => {
     let db = await dbConnect();
     // console.log(db);
-    let result  = await db.insert(
-        [
-            { name: "asus", price: 15000, category: "Mobile" }
-        ]
+    let result = await db.insertOne(
+        { name: "asus 5", price: 1000, category: "mobile" }
     );
     // console.log(result);
 }
 
-insertData()
+insertData(); */
+
+//      Update Data
+
+/* const updateData = async () => {
+    let data = await dbConnect();
+    // console.log(data);
+    let result = await data.updateOne(
+        { name: "asus" }, {
+        $set: { name: "asus 5", price: 12000 }  // Badha record update krva update khali lakhvu
+    }
+    );
+    console.log(result); 
+}
+
+updateData(); */
+
+
+//      Delete Data
+
+const deleteData = async () => {
+    let data = await dbConnect();
+    // console.log(data);
+    let result =await data.deleteOne(
+        { name: "asus 5" }
+    );
+    console.log(result);
+};
+
+deleteData();
+
+
+
+
+
+
+
+
+
+
+
 
 /* const mongoose = require("mongoose");
 
