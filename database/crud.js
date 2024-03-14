@@ -66,13 +66,7 @@ deleteData();
 
 
 
-
-
-
-
-
-
-
+    
 
 /* const mongoose = require("mongoose");
 
